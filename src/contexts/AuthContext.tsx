@@ -28,7 +28,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const auth = useAuth();
-  const [surveyAnswers, setSurveyAnswersState] = React.useState<SurveyAnswers | null>(() => {
+  const [surveyAnswers, setSurveyAnswersState] = useState<SurveyAnswers | null>(() => {
     const stored = localStorage.getItem('kickoffSurveyAnswers');
     return stored ? JSON.parse(stored) : null;
   });
