@@ -101,15 +101,15 @@ export default function Signup() {
             </p>
           </div>
           <p className="text-muted-foreground mb-8">
-            Your account has been created successfully. Now you can log in and
-            start your focus journey.
+            Your account has been created successfully. Let's customize your experience with a quick survey!
           </p>
-          <Link to="/login" className="block">
-            <Button className="w-full rounded-full py-3 text-base font-semibold transition-all duration-300 hover:scale-105">
-              Go to Login
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-          </Link>
+          <Button
+            onClick={() => navigate('/app/kickoff-survey')}
+            className="w-full rounded-full py-3 text-base font-semibold transition-all duration-300 hover:scale-105"
+          >
+            Start Survey
+            <ArrowRight className="w-4 h-4 ml-2" />
+          </Button>
         </Card>
       </div>
     );
