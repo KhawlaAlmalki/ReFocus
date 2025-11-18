@@ -1,9 +1,9 @@
-import { useState, useMemo } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
-import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useState, useMemo } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import {
   Users,
@@ -14,7 +14,7 @@ import {
   Check,
   Sparkles,
   ArrowUpRight,
-} from 'lucide-react';
+} from "lucide-react";
 
 interface LeaderboardUser {
   id: number;
@@ -29,38 +29,38 @@ interface LeaderboardUser {
 const mockFriends: LeaderboardUser[] = [
   {
     id: 1,
-    name: 'You',
-    username: '@raghad',
-    avatarInitials: 'RA',
+    name: "You",
+    username: "@raghad",
+    avatarInitials: "RA",
     totalHours: 124.5,
     isYou: true,
   },
   {
     id: 2,
-    name: 'Khawlah Almalki',
-    username: '@khawla',
-    avatarInitials: 'KA',
+    name: "Khawlah Almalki",
+    username: "@khawla",
+    avatarInitials: "KA",
     totalHours: 110.2,
   },
   {
     id: 3,
-    name: 'Aleen Alghamdi',
-    username: '@aleen',
-    avatarInitials: 'AA',
+    name: "Aleen Alghamdi",
+    username: "@aleen",
+    avatarInitials: "AA",
     totalHours: 97.8,
   },
   {
     id: 4,
-    name: 'Shahad Alhasan',
-    username: '@shahad',
-    avatarInitials: 'SA',
+    name: "Shahad Alhasan",
+    username: "@shahad",
+    avatarInitials: "SA",
     totalHours: 82.1,
   },
   {
     id: 5,
-    name: 'Abeer Alqahtani',
-    username: '@Abeer',
-    avatarInitials: 'AB',
+    name: "Abeer Alqahtani",
+    username: "@Abeer",
+    avatarInitials: "AB",
     totalHours: 65.4,
   },
 ];
@@ -69,45 +69,45 @@ const mockFriends: LeaderboardUser[] = [
 const mockGlobal: LeaderboardUser[] = [
   {
     id: 1,
-    name: 'You',
-    username: '@raghad',
-    avatarInitials: 'RA',
+    name: "You",
+    username: "@raghad",
+    avatarInitials: "RA",
     totalHours: 124.5,
     isYou: true,
   },
   {
     id: 6,
-    name: 'Focus Ninja',
-    username: '@deepwork',
-    avatarInitials: 'FN',
+    name: "Focus Ninja",
+    username: "@deepwork",
+    avatarInitials: "FN",
     totalHours: 210.3,
   },
   {
     id: 7,
-    name: 'Zen Coder',
-    username: '@zenmode',
-    avatarInitials: 'ZC',
+    name: "Zen Coder",
+    username: "@zenmode",
+    avatarInitials: "ZC",
     totalHours: 198.7,
   },
   {
     id: 8,
-    name: 'Study Storm',
-    username: '@storm',
-    avatarInitials: 'SS',
+    name: "Study Storm",
+    username: "@storm",
+    avatarInitials: "SS",
     totalHours: 176.9,
   },
   {
     id: 9,
-    name: 'No-Scroll Queen',
-    username: '@nosocial',
-    avatarInitials: 'NQ',
+    name: "No-Scroll Queen",
+    username: "@nosocial",
+    avatarInitials: "NQ",
     totalHours: 160.4,
   },
   {
     id: 10,
-    name: 'Midnight Owl',
-    username: '@nightfocus',
-    avatarInitials: 'MO',
+    name: "Midnight Owl",
+    username: "@nightfocus",
+    avatarInitials: "MO",
     totalHours: 145.2,
   },
 ];
@@ -117,28 +117,32 @@ export default function Community() {
   const [globalUsers] = useState<LeaderboardUser[]>(mockGlobal);
 
   // Who you clicked "Start session" with
-  const [selectedFriend, setSelectedFriend] = useState<LeaderboardUser | null>(null);
+  const [selectedFriend, setSelectedFriend] = useState<LeaderboardUser | null>(
+    null,
+  );
   const [isSessionModalOpen, setIsSessionModalOpen] = useState(false);
 
   // Global connection requests state
-  const [connectionRequests, setConnectionRequests] = useState<Record<number, boolean>>({});
+  const [connectionRequests, setConnectionRequests] = useState<
+    Record<number, boolean>
+  >({});
 
   const sortedFriends = useMemo(
     () => [...friends].sort((a, b) => b.totalHours - a.totalHours),
-    [friends]
+    [friends],
   );
 
   const sortedGlobal = useMemo(
     () => [...globalUsers].sort((a, b) => b.totalHours - a.totalHours),
-    [globalUsers]
+    [globalUsers],
   );
 
   const youInFriends = sortedFriends.find((u) => u.isYou);
   const youInGlobal = sortedGlobal.find((u) => u.isYou);
   const yourFriendsRank =
-    youInFriends !== undefined ? sortedFriends.indexOf(youInFriends) + 1 : '-';
+    youInFriends !== undefined ? sortedFriends.indexOf(youInFriends) + 1 : "-";
   const yourGlobalRank =
-    youInGlobal !== undefined ? sortedGlobal.indexOf(youInGlobal) + 1 : '-';
+    youInGlobal !== undefined ? sortedGlobal.indexOf(youInGlobal) + 1 : "-";
 
   const handleOpenSessionModal = (friend: LeaderboardUser) => {
     setSelectedFriend(friend);
@@ -148,7 +152,7 @@ export default function Community() {
   const handleConfirmSession = () => {
     if (selectedFriend) {
       // later you can navigate or call backend here
-      console.log('Starting focus session with:', selectedFriend.username);
+      console.log("Starting focus session with:", selectedFriend.username);
     }
     setIsSessionModalOpen(false);
     setSelectedFriend(null);
@@ -180,8 +184,9 @@ export default function Community() {
             Community & Leaderboards
           </h1>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            See how your focus stacks up against friends and the global ReFocus community.
-            Celebrate the wins, challenge each other, and start shared focus sessions.
+            See how your focus stacks up against friends and the global ReFocus
+            community. Celebrate the wins, challenge each other, and start
+            shared focus sessions.
           </p>
         </div>
 
@@ -194,8 +199,10 @@ export default function Community() {
                   Your Focus Hours
                 </p>
                 <p className="text-3xl font-bold">
-                  {youInFriends ? youInFriends.totalHours.toFixed(1) : '—'}
-                  <span className="text-sm text-muted-foreground ml-1">hrs</span>
+                  {youInFriends ? youInFriends.totalHours.toFixed(1) : "—"}
+                  <span className="text-sm text-muted-foreground ml-1">
+                    hrs
+                  </span>
                 </p>
               </div>
               <div className="p-3 rounded-2xl bg-primary text-primary-foreground">
@@ -268,7 +275,10 @@ export default function Community() {
           <TabsContent value="friends" className="space-y-6">
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-2">
-                <Badge variant="outline" className="px-3 py-1 text-xs font-semibold">
+                <Badge
+                  variant="outline"
+                  className="px-3 py-1 text-xs font-semibold"
+                >
                   Friends Leaderboard
                 </Badge>
                 <span className="text-xs text-muted-foreground">
@@ -288,7 +298,7 @@ export default function Community() {
                     <div
                       key={user.id}
                       className={`flex items-center justify-between px-4 md:px-6 py-4 md:py-5 transition-colors ${
-                        user.isYou ? 'bg-muted/60' : 'hover:bg-muted/40'
+                        user.isYou ? "bg-muted/60" : "hover:bg-muted/40"
                       }`}
                     >
                       {/* Left: rank + avatar + names */}
@@ -317,7 +327,9 @@ export default function Community() {
                           <p className="text-sm md:text-base font-semibold text-foreground leading-tight">
                             {user.name}
                           </p>
-                          <p className="text-xs text-muted-foreground">{user.username}</p>
+                          <p className="text-xs text-muted-foreground">
+                            {user.username}
+                          </p>
                         </div>
                       </div>
 
@@ -355,7 +367,10 @@ export default function Community() {
           <TabsContent value="global" className="space-y-6">
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-2">
-                <Badge variant="outline" className="px-3 py-1 text-xs font-semibold">
+                <Badge
+                  variant="outline"
+                  className="px-3 py-1 text-xs font-semibold"
+                >
                   Global Community
                 </Badge>
                 <span className="text-xs text-muted-foreground">
@@ -379,7 +394,7 @@ export default function Community() {
                       <div
                         key={user.id}
                         className={`flex items-center justify-between px-4 md:px-6 py-4 md:py-5 transition-colors ${
-                          user.isYou ? 'bg-muted/60' : 'hover:bg-muted/40'
+                          user.isYou ? "bg-muted/60" : "hover:bg-muted/40"
                         }`}
                       >
                         {/* Left: rank + avatar + names */}
@@ -408,7 +423,9 @@ export default function Community() {
                             <p className="text-sm md:text-base font-semibold text-foreground leading-tight">
                               {user.name}
                             </p>
-                            <p className="text-xs text-muted-foreground">{user.username}</p>
+                            <p className="text-xs text-muted-foreground">
+                              {user.username}
+                            </p>
                           </div>
                         </div>
 
@@ -429,8 +446,8 @@ export default function Community() {
                             disabled={user.isYou || requested}
                             className={`rounded-full transition-all ${
                               requested
-                                ? 'text-success hover:text-success'
-                                : 'hover:bg-secondary hover:text-secondary-foreground'
+                                ? "text-success hover:text-success"
+                                : "hover:bg-secondary hover:text-secondary-foreground"
                             }`}
                             onClick={() => handleSendConnectionRequest(user)}
                           >
@@ -463,8 +480,9 @@ export default function Community() {
                 Turn your focus into a team sport.
               </h2>
               <p className="text-sm md:text-base opacity-90 max-w-xl">
-                Invite friends, start shared sessions, and climb the leaderboards together.
-                Tiny consistent focus blocks → huge long-term change.
+                Invite friends, start shared sessions, and climb the
+                leaderboards together. Tiny consistent focus blocks → huge
+                long-term change.
               </p>
             </div>
             <Button className="bg-white text-primary hover:bg-white/90 rounded-full px-8 py-3 text-sm md:text-base font-semibold inline-flex items-center gap-2">
@@ -483,12 +501,13 @@ export default function Community() {
                   Start a focus session?
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  You&apos;re about to start a shared focus session with{' '}
+                  You&apos;re about to start a shared focus session with{" "}
                   <span className="font-semibold text-foreground">
                     {selectedFriend.name}
-                  </span>{' '}
-                  {selectedFriend.isYou ? '(yes, that’s you 🤍)' : ''}. You can later decide
-                  how long the session will be inside the focus screen.
+                  </span>{" "}
+                  {selectedFriend.isYou ? "(yes, that’s you 🤍)" : ""}. You can
+                  later decide how long the session will be inside the focus
+                  screen.
                 </p>
               </div>
 
@@ -497,7 +516,9 @@ export default function Community() {
                   {selectedFriend.avatarInitials}
                 </div>
                 <div>
-                  <p className="text-sm font-semibold">{selectedFriend.username}</p>
+                  <p className="text-sm font-semibold">
+                    {selectedFriend.username}
+                  </p>
                   <p className="text-xs text-muted-foreground">
                     Total focus: {selectedFriend.totalHours.toFixed(1)} hrs
                   </p>
