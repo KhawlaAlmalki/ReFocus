@@ -28,9 +28,24 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const auth = useAuth();
+  const [surveyAnswers, setSurveyAnswersState] = React.useState<SurveyAnswers | null>(() => {
+    const stored = localStorage.getItem('kickoffSurveyAnswers');
+    return stored ? JSON.parse(stored) : null;
+  });
+
+  const setSurveyAnswers = (answers: SurveyAnswers) => {
+    setSurveyAnswersState(answers);
+    localStorage.setItem('kickoffSurveyAnswers', JSON.stringify(answers));
+  };
+
+  const value: AuthContextType = {
+    ...auth,
+    surveyAnswers,
+    setSurveyAnswers,
+  };
 
   return (
-    <AuthContext.Provider value={auth}>
+    <AuthContext.Provider value={value}>
       {children}
     </AuthContext.Provider>
   );
