@@ -1,4 +1,4 @@
-import { createContext, useContext, ReactNode } from 'react';
+import { createContext, useContext, ReactNode, useState } from 'react';
 import { useAuth, User, UserRole } from '@/hooks/useAuth';
 
 export interface SurveyAnswers {
