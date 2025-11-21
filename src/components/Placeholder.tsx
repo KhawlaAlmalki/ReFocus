@@ -13,7 +13,7 @@ export const Placeholder: React.FC<{ title: string }> = ({ title }) => {
         </div>
         <h1 className="text-2xl font-bold text-foreground mb-4">{title}</h1>
         <p className="text-muted-foreground mb-6">
-          This page is being built. Continue prompting me to help fill in this page content!
+          This page is being built!
         </p>
         <p className="text-xs text-muted-foreground">
           Path: <code className="bg-background px-2 py-1 rounded">{location.pathname}</code>

@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  to="/about"
+                      to="/about"
                   className="text-muted-foreground hover:text-primary"
                 >
                   How it Works
@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
                   href="#"
                   className="text-muted-foreground hover:text-primary"
                 >
-                  Contact
+                  Q&A
                 </a>
               </li>
             </ul>
@@ -58,26 +58,19 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  to="/privacy-policy"
+                  to="/privacy"
                   className="text-muted-foreground hover:text-primary"
                 >
                   Privacy Policy
                 </Link>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-muted-foreground hover:text-primary"
-                >
-                  Terms of Service
-                </a>
-              </li>
+
             </ul>
           </div>
         </div>
         <div className="border-t border-border pt-8">
           <p className="text-center text-muted-foreground text-sm">
-            © 2024 ReFocus. All rights reserved.
+            © 2025 ReFocus. All rights reserved.
           </p>
         </div>
       </div>

@@ -93,11 +93,11 @@ export const Header: React.FC<HeaderProps> = ({ user, onLogout }) => {
       case 'developer':
         return (
           <>
-            <Link to="/dev/games" className="text-foreground hover:text-primary font-medium">
-              Games
+            <Link to="/dev/Dashboard" className="text-foreground hover:text-primary font-medium">
+              Dashboard
             </Link>
-            <Link to="/dev/versions" className="text-foreground hover:text-primary font-medium">
-              Versions
+            <Link to="/dev/games" className="text-foreground hover:text-primary font-medium">
+              Submissions
             </Link>
             <Link to="/dev/analytics" className="text-foreground hover:text-primary font-medium">
               Analytics
