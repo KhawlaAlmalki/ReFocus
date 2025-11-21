@@ -22,7 +22,7 @@ const mockRequests: CoachRequest[] = [
     id: '1',
     name: 'Ahmed Hassan',
     email: 'ahmed@example.com',
-    experience: '8 years of coaching experience in productivity and focus management',
+    experience: '3 years of coaching experience in productivity and focus management',
     bio: 'Certified productivity coach with expertise in helping students achieve their academic goals.',
     specialization: 'Academic Focus, Time Management',
     menteeCount: 0,
