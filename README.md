@@ -71,7 +71,7 @@ This project was developed collaboratively by the following team members. Each m
 
 - **Aleen Alghamdi** — Page Development, UI Enhancements
 - **Khawla Al-Malki** — Frontend Development, Application Structure
-- **Raghad Almagrabi** — State Management, Contexts & Hooks
+- **Raghad Almaghrabi** — State Management, Contexts & Hooks
 - **Shahad Alhassan** — Styling, User Experience Flow
 
 ## **Setup & Installation**
