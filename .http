@@ -1,12 +1,12 @@
 ### Health Check
-GET http://localhost:5000/api/health
+GET http://localhost:5050/api/health
 
 ### Get All Users
-GET http://localhost:5000/api/users
+GET http://localhost:5050/api/users
 Content-Type: application/json
 
 ### Create User
-POST http://localhost:5000/api/users
+POST http://localhost:5050/api/users
 Content-Type: application/json
 
 {
@@ -16,7 +16,7 @@ Content-Type: application/json
 }
 
 ### Login
-POST http://localhost:5000/api/auth/login
+POST http://localhost:5050/api/auth/login
 Content-Type: application/json
 
 {
@@ -25,12 +25,12 @@ Content-Type: application/json
 }
 
 ### Get User by ID (with auth token)
-GET http://localhost:5000/api/users/123
+GET http://localhost:5050/api/users/123
 Authorization: Bearer YOUR_TOKEN_HERE
 Content-Type: application/json
 
 ### Update User
-PUT http://localhost:5000/api/users/123
+PUT http://localhost:5050/api/users/123
 Content-Type: application/json
 Authorization: Bearer YOUR_TOKEN_HERE
 
@@ -39,5 +39,5 @@ Authorization: Bearer YOUR_TOKEN_HERE
 }
 
 ### Delete User
-DELETE http://localhost:5000/api/users/123
+DELETE http://localhost:5050/api/users/123
 Authorization: Bearer YOUR_TOKEN_HERE
