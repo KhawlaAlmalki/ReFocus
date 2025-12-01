@@ -46,6 +46,9 @@ app.use("/api/sessions", auth, sessionRoutes);
 import surveyRoutes from "./src/routes/survey.js";
 app.use("/api/survey", auth, surveyRoutes);
 
+import communityRoutes from "./src/routes/community.js";
+app.use("/api/community", communityRoutes);
+
 
 
 
