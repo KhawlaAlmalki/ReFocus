@@ -1,0 +1,26 @@
+POST http://localhost:5050/api/users
+Content-Type: application/json
+Content-Length: 84
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "password123"
+}
+
+<> ٢٠٢٥-١٢-٠١T٢٢٣٠٣٧.403.json
+
+###
+
+GET http://localhost:5050/api/health
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> ٢٠٢٥-١٢-٠١T٢٢٢٨٥٥.404.html
+
+###
+
