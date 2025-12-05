@@ -63,17 +63,10 @@ mongoose.connection.on('error', (err) => {
 });
 
 // ----------------------
-// ROOT ROUTE
-// ----------------------
-app.get("/", (req, res) => {
-  res.send("ReFocus Backend API - Running");
-});
-
-// ----------------------
 // ROUTES
 // ----------------------
 
-// PUBLIC ROUTES
+// Import route modules first (imports are hoisted anyway)
 import authRoutes from "./src/routes/auth.js";
 app.use("/api/auth", authRoutes);
 
@@ -105,6 +98,23 @@ app.use("/api/dev", auth, devRoutes);
 // START SERVER
 // ----------------------
 const PORT = process.env.APP_PORT || 5050;
+
+// ----------------------
+// Basic routes
+// ----------------------
+app.get("/", (req, res) => {
+  res.send("ReFocus Backend API - Running");
+});
+
+// Test endpoint to verify connection
+app.get("/api/test", (req, res) => {
+  res.json({
+    success: true,
+    message: 'Backend is connected!',
+    timestamp: new Date().toISOString(),
+    port: PORT
+  });
+});
 
 // Only start server if not in test environment
 if (process.env.NODE_ENV !== 'test') {

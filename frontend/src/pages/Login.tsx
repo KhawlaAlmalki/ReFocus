@@ -23,7 +23,7 @@ export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
-    const [role, setRole] = useState<UserRole>("end-user");
+    const [role, setRole] = useState<UserRole>("user");
     const [rememberMe, setRememberMe] = useState(false);
     const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
@@ -44,7 +44,7 @@ export default function Login() {
         toast.success("Logged in successfully!");
 
         switch (role) {
-            case "end-user":
+            case "user":
                 navigate("/app/dashboard");
                 break;
             case "coach":

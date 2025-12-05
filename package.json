@@ -1,0 +1,33 @@
+{
+  "name": "refocus",
+  "version": "1.0.0",
+  "description": "ReFocus - A comprehensive platform for focus training and game development",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "start:frontend": "cd frontend && npm run dev",
+    "start:backend": "cd backend && npm run dev",
+    "dev": "concurrently \"npm run start:frontend\" \"npm run start:backend\" --names \"frontend,backend\" --prefix-colors \"cyan,magenta\"",
+    "install:frontend": "cd frontend && npm install",
+    "install:backend": "cd backend && npm install",
+    "install:all": "npm run install:frontend && npm run install:backend",
+    "build:frontend": "cd frontend && npm run build",
+    "test:frontend": "cd frontend && npm test",
+    "test:backend": "cd backend && npm test"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "keywords": [
+    "focus",
+    "training",
+    "games",
+    "therapy",
+    "mental-health"
+  ],
+  "author": "",
+  "license": "ISC"
+}

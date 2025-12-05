@@ -25,7 +25,7 @@ export default function Signup() {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-    const [role, setRole] = useState<UserRole>("end-user");
+    const [role, setRole] = useState<UserRole>("user");
     const [submitted, setSubmitted] = useState(false);
     const [errors, setErrors] = useState<{ [key: string]: string }>({});
 

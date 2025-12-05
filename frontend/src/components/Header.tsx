@@ -43,7 +43,7 @@ export const Header: React.FC<HeaderProps> = ({ user, onLogout }) => {
     }
 
     switch (user.role) {
-      case 'end-user':
+      case 'user':
         return (
           <>
             <Link to="/app/dashboard" className="text-foreground hover:text-primary font-medium">
@@ -136,7 +136,7 @@ export const Header: React.FC<HeaderProps> = ({ user, onLogout }) => {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
                 <DropdownMenuItem asChild>
-                  <Link to={user.role === 'end-user' ? '/app/profile' : '/settings'}>
+                  <Link to={user.role === 'user' ? '/app/profile' : '/settings'}>
                     Settings
                   </Link>
                 </DropdownMenuItem>
@@ -175,7 +175,7 @@ export const Header: React.FC<HeaderProps> = ({ user, onLogout }) => {
             <div className="border-t border-border pt-4 flex flex-col gap-2">
               {user ? (
                 <>
-                  <Link to={user.role === 'end-user' ? '/app/profile' : '/settings'}>
+                  <Link to={user.role === 'user' ? '/app/profile' : '/settings'}>
                     <Button variant="outline" className="w-full">
                       Settings
                     </Button>
